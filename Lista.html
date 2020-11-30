@@ -22,7 +22,7 @@
     var appLivro = new function(){
         this.el = document.getElementById("Livros");
         this.livros = ['Espadachim do carvão', 'Harry Potter', 'Anjos e demonios'];
-
+        //metodo contador
         this.contar = function(dado){
             var el = document.getElementById("Contador");
             var singplural = "livro";
@@ -31,10 +31,26 @@
                     singplural = "livros";
                 }
                 el.innerHTML = dado + ' ' + singplural;
+            }else{
+                el.innerHTML = 'Sem registro de ' + singplural;
             }
-            el.innerHTML = 'Sem registro de ' + singplural;        
+                    
         }
+        //metodo para agrupar na tabela
+        this.juntaTudo = function(){
+            var dado = '';
+            if(this.livros.length > 0){
+                for(i=0 ;i<this.livros.length; i++){
+                    dado += '<tr>';
+                    dado += '<td>' + this.livros[i] + '<td>';
+                    dado += '</tr>'
 
+                }       
+            }
+            this.contar(this.livros.length);
+            return this.el.innerHTML = dado;
+        }
+     }
 
-    }
+     appLivro.juntaTudo();
 </script>
