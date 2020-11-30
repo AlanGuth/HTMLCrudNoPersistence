@@ -1,9 +1,10 @@
 <meta charset="UTF-8">
 <html>
     <head>
-        <TItle>CRUD em HTML</TItle>
+
     </head>
     <body>
+        <p id="Contador"></p>
         <table>
             <tr>
                 <th>Titulo</th>
@@ -21,7 +22,18 @@
     var appLivro = new function(){
         this.el = document.getElementById("Livros");
         this.livros = ['Espadachim do carvão', 'Harry Potter', 'Anjos e demonios'];
-        
+
+        this.contar = function(dado){
+            var el = document.getElementById("Contador");
+            var singplural = "livro";
+            if(dado){
+                if(dado > 1){
+                    singplural = "livros";
+                }
+                el.innerHTML = dado + ' ' + singplural;
+            }
+            el.innerHTML = 'Sem registro de ' + singplural;        
+        }
 
 
     }
