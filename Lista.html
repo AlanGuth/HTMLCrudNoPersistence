@@ -58,7 +58,9 @@
                 for(i=0 ;i<this.livros.length; i++){
                     dado += '<tr>';
                     dado += '<td>' + this.livros[i] + '<td>';
-                    dado += '</tr>'
+                        dado += '<td> <button onclick="appLivro.editar('+ i +')">Editar</button></td>'; 
+                    dado += '</tr>';
+                    
 
                 }       
             }
