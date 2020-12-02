@@ -76,10 +76,24 @@
                 this.juntaTudo();
             }
         }
-     }
-     this.editar = function(){
+     this.editar = function(item){
+         var el = document.getElementById('editarLivro');
+         el.value = this.livros[item];
+         document.getElementById('spoiler').style.display = 'block';
+         self = this;
+        
+        document.getElementById('salvarEdicao').onsubmit = function(){
+            var livro = el.value;
+            if(livro){
+                self.livros.splice(item,1,livro.trim());
+                self.juntaTudo();
+                CloseInput();
+                }
+            }
 
+        }
      }
+     
      function CloseInput(){
          document.getElementById("spoiler").style.display='none';
      } 
