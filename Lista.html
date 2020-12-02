@@ -55,5 +55,17 @@
         }
      }
 
+        this.adicionar = function(){
+            el = document.getElementById("adicionarLivro");
+            var livro = el.value;
+            if(livro){
+                this.livros.push(livro.trim());
+                el.value='';
+                this.juntaTudo();
+            }
+
+
+        }
+
      appLivro.juntaTudo();
 </script>
