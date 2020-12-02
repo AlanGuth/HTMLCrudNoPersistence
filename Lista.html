@@ -8,6 +8,13 @@
             <input type="text" id="adicionarLivro" placeholder="Novo Livro">
             <input type="submit" value="Adicionar">
         </form>
+        <div id="spoiler" role="aria-hidden">
+            <form action="javascript:void(0);" method="POST" id="salvarEdicao">
+                <input type="text" id="editarLivro">
+                <input type="submit" value="Editar"/>
+                <a onclick="CloseInput()" aria-label="Close" >&#10006</a>
+            </form>
+        </div>
         <p id="Contador"></p>
         <table>
             <tr>
