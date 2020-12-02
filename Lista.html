@@ -53,8 +53,6 @@
             this.contar(this.livros.length);
             return this.el.innerHTML = dado;
         }
-     }
-
         this.adicionar = function(){
             el = document.getElementById("adicionarLivro");
             var livro = el.value;
@@ -63,9 +61,9 @@
                 el.value='';
                 this.juntaTudo();
             }
-
-
         }
+     }
+
 
      appLivro.juntaTudo();
 </script>
