@@ -58,7 +58,8 @@
                 for(i=0 ;i<this.livros.length; i++){
                     dado += '<tr>';
                     dado += '<td>' + this.livros[i] + '<td>';
-                        dado += '<td> <button onclick="appLivro.editar('+ i +')">Editar</button></td>'; 
+                    dado += '<td><button onclick="appLivro.editar('+ i +')">Editar</button></td>'; 
+                    dado += '<td><button onclick="appLivro.deletar('+ i +')">Excluir</button></td>';
                     dado += '</tr>';
                     
 
@@ -76,23 +77,28 @@
                 this.juntaTudo();
             }
         }
-     this.editar = function(item){
+         this.editar = function(item){
          var el = document.getElementById('editarLivro');
          el.value = this.livros[item];
          document.getElementById('spoiler').style.display = 'block';
          self = this;
         
-        document.getElementById('salvarEdicao').onsubmit = function(){
-            var livro = el.value;
-            if(livro){
+            document.getElementById('salvarEdicao').onsubmit = function(){
+                var livro = el.value;
+             if(livro){
                 self.livros.splice(item,1,livro.trim());
                 self.juntaTudo();
                 CloseInput();
                 }
-            }
+              }
 
         }
-     }
+        this.deletar = function(item){
+            this.livros.splice(item,1);
+            this.juntaTudo();
+        }
+
+    }
      
      function CloseInput(){
          document.getElementById("spoiler").style.display='none';
